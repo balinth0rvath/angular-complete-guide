@@ -1,3 +1,4 @@
+import { Recepie } from './recepie.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipieBookComponent implements OnInit {
 
+  r: Recepie;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(r: Recepie) {
+    this.r = r;
   }
 
 }

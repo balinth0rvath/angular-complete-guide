@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core"
+import { Component, OnInit, Input } from "@angular/core"
+import { Recepie } from './../recepie.model';
 
 @Component({
     selector: 'app-recipie-detail',
@@ -7,8 +8,13 @@ import { Component, OnInit } from "@angular/core"
 })
 export class RecipieDetailComponent implements OnInit {
 
-constructor() {};
+@Input() r:Recepie = new Recepie('x','x','x');
 
-ngOnInit() {};
+constructor() {
+};
+
+ngOnInit() {
+     this.r = new Recepie('','','');
+};
 
 }
