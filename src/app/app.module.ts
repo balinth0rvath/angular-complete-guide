@@ -11,6 +11,7 @@ import { RecipieListComponent } from './recipie-book/recipie-list/recipie-list.c
 import { RecipieItemComponent } from './recipie-book/recipie-list/recipie-item/recipie-item.component';
 import { RecipieDetailComponent } from './recipie-book/recipie-detail/recipie-detail.component';
 import { RecipieBookComponent } from './recipie-book/recipie-book.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RecipieBookComponent } from './recipie-book/recipie-book.component';
     RecipieListComponent,
     RecipieItemComponent,
     RecipieDetailComponent,
-    RecipieBookComponent
+    RecipieBookComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

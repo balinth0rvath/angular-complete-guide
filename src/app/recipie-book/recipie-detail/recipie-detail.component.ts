@@ -14,7 +14,7 @@ constructor() {
 };
 
 ngOnInit() {
-     this.r = new Recepie('','','');
+    //  this.r = new Recepie('','','');
 };
 
 }
