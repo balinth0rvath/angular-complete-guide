@@ -7,8 +7,8 @@
 <div class="row">
     <div class="col-xs-12">
         <app-recipie-item 
-            [r]="r" 
-            *ngFor="let r of recipies"
-            (recepieClicked)="onSelect($event)"></app-recipie-item>
+            [recepipe]="recepipi" 
+            *ngFor="let recepipi of recepipies">
+        </app-recipie-item>
     </div>
 </div>

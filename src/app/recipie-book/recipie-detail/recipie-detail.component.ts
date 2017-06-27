@@ -1,3 +1,5 @@
+import { RecipeService } from './../recipe.service';
+import { Ingredient } from './../../shared/ingredient.model';
 import { Component, OnInit, Input } from "@angular/core"
 import { Recepie } from './../recepie.model';
 
@@ -8,13 +10,17 @@ import { Recepie } from './../recepie.model';
 })
 export class RecipieDetailComponent implements OnInit {
 
-@Input() r:Recepie = new Recepie('x','x','x');
+    @Input() r: Recepie;
 
-constructor() {
-};
+    constructor(private recipeService: RecipeService) {
+    };
 
-ngOnInit() {
-    //  this.r = new Recepie('','','');
-};
+    ngOnInit() {
+    
+    };
+
+    addToShoppingList() {
+        this.recipeService.addIngredientsToShoppingList(this.r.ingredients);
+    }
 
 }

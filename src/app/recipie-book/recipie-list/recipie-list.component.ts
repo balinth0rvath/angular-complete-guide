@@ -1,5 +1,6 @@
+import { RecipeService } from './../recipe.service';
 import { Recepie } from './../recepie.model';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-recipie-list',
@@ -8,25 +9,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class RecipieListComponent implements OnInit {
 
-  @Output() recepieClicked = new EventEmitter<Recepie>(); 
+  recepipies: Recepie[];
 
-  recipies: Recepie[] = [
-    new Recepie('A Test Recepie', 'This is a simply test',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Food_Network.svg/2000px-Food_Network.svg.png'),
-    new Recepie('A Test Recepie', 'This is a simply test',
-      'https://c1.staticflickr.com/3/2547/3862672238_30d378e7d6.jpg'),
-    new Recepie('A Test Recepie', 'This is a simply test',
-      'https://c1.staticflickr.com/3/2547/3862672238_30d378e7d6.jpg')
-
-
-  ];
-
-  constructor() { }
+  constructor(private recepieService:RecipeService) { }
 
   ngOnInit() {
+    this.recepipies = this.recepieService.getRecipes();
+    console.log('>>>>'+this.recepipies.length);
   }
 
-  onSelect(r:Recepie) {
-    this.recepieClicked.emit(r)
-  }
 }
