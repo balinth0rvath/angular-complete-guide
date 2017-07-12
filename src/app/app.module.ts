@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,6 +14,8 @@ import { RecipieItemComponent } from './recipie-book/recipie-list/recipie-item/r
 import { RecipieDetailComponent } from './recipie-book/recipie-detail/recipie-detail.component';
 import { RecipieBookComponent } from './recipie-book/recipie-book.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { RepieceStartComponent } from './recipie-book/repiece-start/repiece-start.component';
+import { RecipeEditComponent } from './recipie-book/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,15 @@ import { DropdownDirective } from './shared/dropdown.directive';
     RecipieItemComponent,
     RecipieDetailComponent,
     RecipieBookComponent,
-    DropdownDirective
+    DropdownDirective,
+    RepieceStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
